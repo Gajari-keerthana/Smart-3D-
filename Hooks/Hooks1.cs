@@ -6,6 +6,8 @@ using Smart3D.Utility;
 using AventStack.ExtentReports.Gherkin.Model;
 using TechTalk.SpecFlow;
 using AventStack.ExtentReports;
+using OpenQA.Selenium.Remote;
+using Microsoft.Extensions.Options;
 
 namespace Smart3D.Hooks
 {
@@ -57,23 +59,29 @@ namespace Smart3D.Hooks
         public void FirstBeforeScenario(ScenarioContext scenarioContext)
         {
             var appiumOptions = new AppiumOptions();
-            appiumOptions.AddAdditionalCapability("platformName", "Galaxy S22+");
+           
+            appiumOptions.AddAdditionalCapability("platformName", "Android");
             appiumOptions.AddAdditionalCapability("platformVersion", "13");
-            appiumOptions.AddAdditionalCapability("deviceName", "R3CT302GE0F");
+            appiumOptions.AddAdditionalCapability("deviceName", "R5CN317NG7W");
             appiumOptions.AddAdditionalCapability("automationName", "UiAutomator2");
             appiumOptions.AddAdditionalCapability("appium:appiumServerAddress", "http://127.0.0.1:4723/wd/hub");
             appiumOptions.AddAdditionalCapability("appPackage", "dk.resound.smart3d");
             // appiumOptions.AddAdditionalCapability("appActivity", "crc644480832bc8628b4d.MainActivity");
+            appiumOptions.AddAdditionalCapability(CapabilityType.Timeouts, TimeSpan.FromSeconds(20));
 
             appiumOptions.AddAdditionalCapability("app", "C:/Users/I-Ray/AppData/Local/Android/Sdk/platform-tools/dk.resound.smart3d-Signed.apk");
             appiumOptions.AddAdditionalCapability("androidInstallTimeout", 120000); // Increase install timeout if necessary
             appiumOptions.AddAdditionalCapability("permissions", "permission1,permission2");
             // Add more Appium options as needed
 
+            var httpClient = new HttpClient();
+            httpClient.Timeout = TimeSpan.FromSeconds(120);
+            var commandExecutor = new HttpCommandExecutor(new Uri("http://localhost:4723/wd/hub"), TimeSpan.FromSeconds(120));
+            IWebDriver driver = new AndroidDriver<AndroidElement>(commandExecutor, appiumOptions);
+            
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(120);
 
-            IWebDriver driver = new AndroidDriver<AndroidElement>(new Uri("http://localhost:4723/wd/hub"), appiumOptions);
-            Thread.Sleep(10000);
-
+            //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
             _container.RegisterInstanceAs(driver);
 
             _scenario = _feature.CreateNode<Scenario>(scenarioContext.ScenarioInfo.Title);

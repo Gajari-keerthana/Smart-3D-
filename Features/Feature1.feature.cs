@@ -102,7 +102,16 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("opens the app displays the popup button and click on the button.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 10
- testRunner.Then("again opens the another popup button and then click on the button.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.When("HI program in All-Around", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 24
+ testRunner.When("press on Sound Enhancer button on All Around program", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 25
+ testRunner.And("set Bass gain to \'4\' Middle gain to \'-3\' Treble gain to \'5\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 26
+ testRunner.Then("validate Bass gain to \'4\' Middle gain to \'-3\' Treble gain to \'5\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

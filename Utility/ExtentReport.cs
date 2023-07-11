@@ -30,8 +30,8 @@ namespace Smart3D.Utility
             _extentReports = new ExtentReports();
             _extentReports.AttachReporter(htmlReporter);
             _extentReports.AddSystemInfo("Application", "Smart3D");
-            _extentReports.AddSystemInfo("platformName", "Galaxy S22+");
-            _extentReports.AddSystemInfo("deviceName", "R3CT302GE0F");
+            _extentReports.AddSystemInfo("platformName", "Android");
+            _extentReports.AddSystemInfo("deviceName", "R5CN317NG7W");
         }
 
         public static void ExtentReportTearDown()
@@ -39,6 +39,6 @@ namespace Smart3D.Utility
             _extentReports.Flush();
         }
 
-      
+        
     }
 }
