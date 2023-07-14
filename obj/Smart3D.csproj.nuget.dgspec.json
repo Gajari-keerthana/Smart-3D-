@@ -59,7 +59,7 @@
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[17.6.2, )"
+              "version": "[17.6.3, )"
             },
             "NUnit3TestAdapter": {
               "target": "Package",

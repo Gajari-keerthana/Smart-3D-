@@ -22,6 +22,8 @@ namespace Smart3D.StepDefinitions
         Step3 step3;
         Step4 step4;
         Step5 step5;
+        Step6 step6;
+        Step7 step7;
 
        
         public Smart3DStepDefinitions(AndroidDriver<AndroidElement> driver)
@@ -224,15 +226,141 @@ namespace Smart3D.StepDefinitions
             step5.value3(p2);
         }
 
-       [Then(@"validate Bass gain to '([^']*)' Middle gain to '([^']*)' Treble gain to '([^']*)'")]
-        public void ThenValidateBassGainToMiddleGainToTrebleGainTo(string p0, string p1, string p2)
+
+        [When(@"Then validate Bass gain to '([^']*)' Middle gain to '([^']*)' Treble gain to '([^']*)'")]
+        public void WhenThenValidateBassGainToMiddleGainToTrebleGainTo(string p0, string p1, string p2)
         {
             step5 = new Step5(driver);
             step5.validatespeech1(p0);
             step5.validatespeech2(p1);
             step5.validatespeech3(p2);
         }
-       
+
+
+        [When(@"I press on Tinnitus Manager on All Around  Sound Enhancer")]
+        public void WhenIPressOnTinnitusManagerOnAllAroundSoundEnhancer()
+        {
+            step6 = new Step6(driver);
+            step6.tinnitusmanager();
+        }
+
+        [When(@"I press Nature sound button Calming Waves on All Around Tinnitus manager")]
+        public void WhenIPressNatureSoundButtonCalmingWavesOnAllAroundTinnitusManager()
+        {
+            step6 = new Step6(driver);
+            step6.calmingwaves();
+        }
+
+        [When(@"I press Nature sound button Breaking Waves on All Around Tinnitus manager")]
+        public void WhenIPressNatureSoundButtonBreakingWavesOnAllAroundTinnitusManager()
+        {
+            step6 = new Step6(driver);
+            step6.breakingwaves();
+        }
+
+
+        [When(@"I press the exit button on All Around Sound enhancer")]
+        public void WhenIPressTheExitButtonOnAllAroundSoundEnhancer()
+        {
+            step6 = new Step6(driver);
+            step6.Soundenhancer();
+            step6.exitbutton();
+        }
+
+        [When(@"I swipe left to Hear in Noise program from current program")]
+        public void WhenISwipeLeftToHearInNoiseProgramFromCurrentProgram()
+        {
+            step6 = new Step6(driver);
+            step6.hearinnoise();
+        }
+
+        [When(@"validate program card is Hear in Noise")]
+        public void WhenValidateProgramCardIsHearInNoise()
+        {
+            step6 = new Step6(driver);
+            string expectedTitle = "Hear in noise";
+            string actualTitle = step6.ValidateText();
+            Assert.AreEqual(expectedTitle, actualTitle, "Then validate program card is Hear in Noise");
+
+        }
+
+        [When(@"I press Sound Enhancer button on Hear in noise program")]
+        public void WhenIPressSoundEnhancerButtonOnHearInNoiseProgram()
+        {
+            step6 = new Step6(driver);
+            step6.hearsoundnoise();
+        }
+
+        [When(@"I press Tinnitus Manager on Hear in noise Sound Enhancer")]
+        public void WhenIPressTinnitusManagerOnHearInNoiseSoundEnhancer()
+        {
+            step6 = new Step6(driver);
+            step6.heartinnitussound();
+        }
+
+        [When(@"I press white noise button Slight variation on Hear in noise Tinnitus Manager")]
+        public void WhenIPressWhiteNoiseButtonSlightVariationOnHearInNoiseTinnitusManager()
+        {
+            step6 = new Step6(driver);
+            step6.slightvar();
+        }
+
+
+        [When(@"I press Reset button on All-Around Tinnitus Manager")]
+        public void WhenIPressResetButtonOnAll_AroundTinnitusManager()
+        {
+            step6 = new Step6(driver);
+            step6.resetbutton();
+
+        }
+
+        [When(@"I press the exit button on Hear in noise Sound Enhancer")]
+        public void WhenIPressTheExitButtonOnHearInNoiseSoundEnhancer()
+        {
+            step6 = new Step6(driver);
+            step6.soundenh();
+           
+        }
+
+        [When(@"I swipe left to Outdoor program from current program")]
+        public void WhenISwipeLeftToOutdoorProgramFromCurrentProgram()
+        {
+            step7 = new Step7(driver);
+            step7.outdoornoise();
+        }
+
+        [Then(@"validate program card is Outdoor")]
+        public void ThenValidateProgramCardIsOutdoor()
+        {
+            step7 = new Step7(driver);
+            string expectedTitle = "Outdoor";
+            string actualTitle = step7.ValidateText();
+            Assert.AreEqual(expectedTitle, actualTitle, "validate program card is Outdoor");
+        }
+
+        [When(@"I press Sound Enhancer button on Outdoor program")]
+        public void WhenIPressSoundEnhancerButtonOnOutdoorProgram()
+        {
+            step7 = new Step7(driver);
+            step7.outdoorsoundnoise();
+        }
+
+        [When(@"I drag Wind Noise Reduction to '([^']*)' on Outdoor Sound Enhancer")]
+        public void WhenIDragWindNoiseReductionToOnOutdoorSoundEnhancer(string strong)
+        {
+            step7 = new Step7(driver);
+            step7.windvalue(strong);
+        }
+
+        [Then(@"validate HI PNR value is Strong")]
+        public void ThenValidateHIPNRValueIsStrong()
+        {
+            step7 = new Step7(driver);
+            string expectedTitle = "Strong";
+            string actualTitle = step7.StrongValidateText();
+            Assert.AreEqual(expectedTitle, actualTitle, "validate HI is in Strong");
+        }
+
 
     }
 }

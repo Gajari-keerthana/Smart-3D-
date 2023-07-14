@@ -62,7 +62,7 @@ namespace Smart3D.Hooks
            
             appiumOptions.AddAdditionalCapability("platformName", "Android");
             appiumOptions.AddAdditionalCapability("platformVersion", "13");
-            appiumOptions.AddAdditionalCapability("deviceName", "R5CN317NG7W");
+            appiumOptions.AddAdditionalCapability("deviceName", "R58N227P0YX");
             appiumOptions.AddAdditionalCapability("automationName", "UiAutomator2");
             appiumOptions.AddAdditionalCapability("appium:appiumServerAddress", "http://127.0.0.1:4723/wd/hub");
             appiumOptions.AddAdditionalCapability("appPackage", "dk.resound.smart3d");
@@ -74,7 +74,7 @@ namespace Smart3D.Hooks
             appiumOptions.AddAdditionalCapability("permissions", "permission1,permission2");
             // Add more Appium options as needed
 
-            var httpClient = new HttpClient();
+            var httpClient = new HttpClient(); // This line of code initializes a new instance of the HttpClient class
             httpClient.Timeout = TimeSpan.FromSeconds(120);
             var commandExecutor = new HttpCommandExecutor(new Uri("http://localhost:4723/wd/hub"), TimeSpan.FromSeconds(120));
             IWebDriver driver = new AndroidDriver<AndroidElement>(commandExecutor, appiumOptions);

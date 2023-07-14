@@ -104,14 +104,26 @@ this.ScenarioInitialize(scenarioInfo);
 #line 10
     testRunner.When("HI program in All-Around", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 24
- testRunner.When("press on Sound Enhancer button on All Around program", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 31
+ testRunner.And("I swipe left to Hear in Noise program from current program", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 25
- testRunner.And("set Bass gain to \'4\' Middle gain to \'-3\' Treble gain to \'5\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 32
+ testRunner.And("validate program card is Hear in Noise", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 26
- testRunner.Then("validate Bass gain to \'4\' Middle gain to \'-3\' Treble gain to \'5\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 38
+ testRunner.When("I swipe left to Outdoor program from current program", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 39
+ testRunner.Then("validate program card is Outdoor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 40
+ testRunner.When("I press Sound Enhancer button on Outdoor program", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 41
+   testRunner.And("I drag Wind Noise Reduction to \'Strong\' on Outdoor Sound Enhancer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 42
+   testRunner.Then("validate HI PNR value is Strong", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
