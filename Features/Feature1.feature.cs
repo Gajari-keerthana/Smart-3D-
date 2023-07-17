@@ -83,7 +83,7 @@ namespace Smart3D.Features
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Opening the Smart3D App.", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 6
-this.ScenarioInitialize(scenarioInfo);
+ this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
@@ -104,26 +104,38 @@ this.ScenarioInitialize(scenarioInfo);
 #line 10
     testRunner.When("HI program in All-Around", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 31
- testRunner.And("I swipe left to Hear in Noise program from current program", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 60
+   testRunner.When("I press menu item My ReSound on bottom ribbon bar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 32
- testRunner.And("validate program card is Hear in Noise", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 61
+   testRunner.And("I press Learn about the app on My ReSound", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 38
- testRunner.When("I swipe left to Outdoor program from current program", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 62
+   testRunner.And("I press Volume control on Learn about the app", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 39
- testRunner.Then("validate program card is Outdoor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 63
+   testRunner.And("I swipe left to 2 / 3 page on Learn about the app", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 40
- testRunner.When("I press Sound Enhancer button on Outdoor program", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 64
+   testRunner.Then("validate Left and right volume animation is shown on Volume control", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 41
-   testRunner.And("I drag Wind Noise Reduction to \'Strong\' on Outdoor Sound Enhancer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 65
+   testRunner.When("I swipe mute left to 3 / 3 page on Learn about the app", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 42
-   testRunner.Then("validate HI PNR value is Strong", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 66
+   testRunner.Then("validate Mute animation is shown on Volume control", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 67
+  testRunner.When("I close on Learn about the app and back to My Resound page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 68
+  testRunner.And("I press Guiding tips on My ReSound", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 69
+  testRunner.And("I press OK on Please notice dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 70
+ testRunner.Then("validate title is Guiding tips on Guiding tips page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

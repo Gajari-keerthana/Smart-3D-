@@ -49,21 +49,37 @@ namespace Smart3D.Pages
         }
 
         By windnoise = By.XPath("(//android.view.View[@index='0'])[5]");
-        By Strongtitle = By.ClassName("android.widget.TextView");
+        //By Strongtitle = By.XPath("(//android.widget.LinearLayout[@index='1'])[4]");
 
         public void windvalue(string value)
         {
             TouchAction touchaction = new TouchAction(driver);
             AndroidElement slide1 = driver.FindElement(windnoise);
-            touchaction.Press(858, 1931)
-                       .MoveTo(858, 1931)
+            touchaction.Press(831, 1902)
+                       .MoveTo(831, 1902)
                        .Release()
                        .Perform();
         }
-        public String StrongValidateText()
+        public void StrongValidateText(string expectedvalue)
         {
-            return driver.FindElement(Strongtitle).Text;
+            // return driver.FindElement(Strongtitle).Text;
 
+
+            Actions actions = new Actions(driver);
+            AndroidElement slide1 = driver.FindElement(windnoise);
+            actions.ClickAndHold(slide1).Perform();
+            actions.MoveByOffset(1, 1).Perform();
+            string actualvalue = driver.FindElement(By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup[2]/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout[4]/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.TextView")).Text;
+            Assert.AreEqual(expectedvalue,actualvalue);
+            actions.Release().Perform();
+        }
+
+        By exit = By.XPath("//android.widget.ImageView[@content-desc=\"icon_close_m\"]");
+        
+        public Step8 soundexit()
+        {
+            driver.FindElement(exit).Click();
+            return new Step8(driver);
         }
 
     }

@@ -24,6 +24,8 @@ namespace Smart3D.StepDefinitions
         Step5 step5;
         Step6 step6;
         Step7 step7;
+        Step8 step8;
+        Step9 step9;
 
        
         public Smart3DStepDefinitions(AndroidDriver<AndroidElement> driver)
@@ -346,19 +348,234 @@ namespace Smart3D.StepDefinitions
         }
 
         [When(@"I drag Wind Noise Reduction to '([^']*)' on Outdoor Sound Enhancer")]
-        public void WhenIDragWindNoiseReductionToOnOutdoorSoundEnhancer(string strong)
+        public void WhenIDragWindNoiseReductionToOnOutdoorSoundEnhancer(string Strong)
         {
             step7 = new Step7(driver);
-            step7.windvalue(strong);
+            step7.windvalue(Strong);
         }
 
-        [Then(@"validate HI PNR value is Strong")]
-        public void ThenValidateHIPNRValueIsStrong()
+        [When(@"validate HI PNR value is '([^']*)'")]
+        public void WhenValidateHIPNRValueIs(string Strong)
         {
             step7 = new Step7(driver);
-            string expectedTitle = "Strong";
-            string actualTitle = step7.StrongValidateText();
-            Assert.AreEqual(expectedTitle, actualTitle, "validate HI is in Strong");
+            step7.StrongValidateText(Strong);
+        }
+
+
+        [When(@"I press the exit button on Outdoor Sound Enhancer")]
+        public void WhenIPressTheExitButtonOnOutdoorSoundEnhancer()
+        {
+            step7 = new Step7(driver);
+            step7.soundexit();
+        }
+
+        [When(@"I swipe left to Music program from current program")]
+        public void WhenISwipeLeftToMusicProgramFromCurrentProgram()
+        {
+            step8 = new Step8(driver);
+            step8.musicslide();
+        }
+
+        [When(@"validate program card is Music")]
+        public void WhenValidateProgramCardIsMusic()
+        {
+            step8 = new Step8(driver);
+            string expectedTitle = "Music";
+            string actualTitle = step8.ValidateText();
+            Assert.AreEqual(expectedTitle, actualTitle, "validate program card is Music");
+        }
+
+       
+        [When(@"I press Music program on the top ribbon bar")]
+        public void WhenIPressMusicProgramOnTheTopRibbonBar()
+        {
+            step8 = new Step8(driver);
+            step8.topribbon();
+        }
+
+        [When(@"validate program card is Musicribbon")]
+        public void WhenValidateProgramCardIsMusicribbon()
+        {
+            step8 = new Step8(driver);
+            string expectedTitle = "Music";
+            string actualTitle = step8.ValidateText1();
+            Assert.AreEqual(expectedTitle, actualTitle, "validate program card is Music");
+        }
+
+        [When(@"I press Outdoor program on the top ribbon bar")]
+        public void WhenIPressOutdoorProgramOnTheTopRibbonBar()
+        {
+            step8 = new Step8(driver);
+            step8.topribbon1();
+        }
+
+        [When(@"validate program card is Outdoorribbon")]
+        public void WhenValidateProgramCardIsOutdoorribbon()
+        {
+            step8 = new Step8(driver);
+            string expectedTitle = "Outdoor";
+            string actualTitle = step7.ValidateText();
+            Assert.AreEqual(expectedTitle, actualTitle, "validate program card is Outdoor");
+        }
+
+        [When(@"I press Hear in noise program on the top ribbon bar")]
+        public void WhenIPressHearInNoiseProgramOnTheTopRibbonBar()
+        {
+            step8 = new Step8(driver);
+            step8.topribbon2();
+        }
+
+        [When(@"validate program card is Hear in Noiseribbon")]
+        public void WhenValidateProgramCardIsHearInNoiseribbon()
+        {
+            step8 = new Step8(driver);
+            string expectedTitle = "Hear in noise";
+            string actualTitle = step8.validateText3();
+            Assert.AreEqual(expectedTitle, actualTitle, "validate program card is Hear in noise");
+        }
+
+        [When(@"I press All-Around program on the top ribbon bar")]
+        public void WhenIPressAll_AroundProgramOnTheTopRibbonBar()
+        {
+            step8 = new Step8(driver);
+            step8.topribbon3();
+        }
+
+        [When(@"validate program card is All-Around")]
+        public void WhenValidateProgramCardIsAll_Around()
+        {
+            step8 = new Step8(driver);
+            string expectedTitle = "All-Around";
+            string actualTitle = step8.validateText4();
+            Assert.AreEqual(expectedTitle, actualTitle, "validate program card is All-around");
+        }
+
+        [When(@"I press Program overview button on topribbonbar")]
+        public void WhenIPressProgramOverviewButtonOnTopribbonbar()
+        {
+            step8 = new Step8(driver);
+            step8.programdrag();
+        }
+
+        [When(@"I press Hear in noise program on Program overview")]
+        public void WhenIPressHearInNoiseProgramOnProgramOverview()
+        {
+            step8 = new Step8(driver);
+            step8.programhear();
+        }
+
+        [When(@"I press Outdoor program on Program overview")]
+        public void WhenIPressOutdoorProgramOnProgramOverview()
+        {
+            step8 = new Step8(driver);
+            step8.programoutdoor();
+        }
+
+        [When(@"I press Music program on Program overview")]
+        public void WhenIPressMusicProgramOnProgramOverview()
+        {
+            step8 = new Step8(driver);
+            step8.programmusic();
+        }
+
+        [When(@"I press All-Around program on Program overview")]
+        public void WhenIPressAll_AroundProgramOnProgramOverview()
+        {
+            step8 = new Step8(driver);
+            step8.programAllaround();
+        }
+
+        [When(@"I press the Close button on Program overview")]
+        public void WhenIPressTheCloseButtonOnProgramOverview()
+        {
+            step8 = new Step8(driver);
+            step8.programclose();
+        }
+
+        [When(@"I press menu item My ReSound on bottom ribbon bar")]
+        public void WhenIPressMenuItemMyReSoundOnBottomRibbonBar()
+        {
+            step9 = new Step9(driver);
+            step9.resound();
+        }
+
+        [When(@"I press Learn about the app on My ReSound")]
+        public void WhenIPressLearnAboutTheAppOnMyReSound()
+        {
+            step9 = new Step9(driver);
+            step9.learnaboutapp();
+        }
+
+        [When(@"I press Volume control on Learn about the app")]
+        public void WhenIPressVolumeControlOnLearnAboutTheApp()
+        {
+            step9 = new Step9(driver);
+            step9.volumecontrol();
+        }
+
+        [When(@"I swipe left to (.*) / (.*) page on Learn about the app")]
+        public void WhenISwipeLeftToPageOnLearnAboutTheApp(int p0, int p1)
+        {
+            step9 = new Step9(driver);
+            step9.volumeleftright();
+        }
+
+
+        [Then(@"validate Left and right volume animation is shown on Volume control")]
+        public void ThenValidateLeftAndRightVolumeAnimationIsShownOnVolumeControl()
+        {
+            step9 = new Step9(driver);
+            string expectedTitle = "Left and right volume";
+            string actualTitle = step9.validatebutton();
+            Assert.AreEqual(expectedTitle, actualTitle, "validate Left and right volume animation is shown on Volume control");
+        }
+
+        [When(@"I swipe mute left to (.*) / (.*) page on Learn about the app")]
+        public void WhenISwipeMuteLeftToPageOnLearnAboutTheApp(int p0, int p1)
+        {
+            step9 = new Step9(driver);
+            step9.swipemute();
+        }
+
+        [Then(@"validate Mute animation is shown on Volume control")]
+        public void ThenValidateMuteAnimationIsShownOnVolumeControl()
+        {
+            step9 = new Step9(driver);
+            string expectedTitle = "Mute";
+            string actualTitle = step9.animationmute();
+            Assert.AreEqual(expectedTitle, actualTitle, "validate Mute animation is not shown on Volume control");
+
+        }
+
+        [When(@"I close on Learn about the app and back to My Resound page")]
+        public void WhenICloseOnLearnAboutTheAppAndBackToMyResoundPage()
+        {
+            step9 = new Step9(driver);
+            step9.volumeclose();
+            step9.learningclose();
+        }
+
+        [When(@"I press Guiding tips on My ReSound")]
+        public void WhenIPressGuidingTipsOnMyReSound()
+        {
+            step9 = new Step9(driver);
+            step9.guidingtips();
+        }
+
+        [When(@"I press OK on Please notice dialog")]
+        public void WhenIPressOKOnPleaseNoticeDialog()
+        {
+            step9 = new Step9(driver);
+            step9.clicknotice();
+        }
+
+        [Then(@"validate title is Guiding tips on Guiding tips page")]
+        public void ThenValidateTitleIsGuidingTipsOnGuidingTipsPage()
+        {
+            step9 = new Step9(driver);
+            string expectedTitle = "Guiding tips";
+            string actualTitle = step9.guidingtitle();
+            Assert.AreEqual(expectedTitle, actualTitle, "validate title is not Guiding tips on Guiding tips page");
         }
 
 
