@@ -1,9 +1,11 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Appium.MultiTouch;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -99,5 +101,62 @@ namespace Smart3D.Pages
            return driver.FindElement(title).Text;
         }
 
+        By noiseguide = By.XPath("//android.widget.TextView[@content-desc=\"NudgingFunctionalTip1Week5Header\"]");
+        public void noisefilterguid()
+        {
+            driver.FindElement(noiseguide).Click();
+        }
+
+        By gotitnoise = By.XPath("//android.widget.TextView[@content-desc=\"NudgingTipConfirmButton\"]");
+        public void noisegoit()
+        {
+            driver.FindElement(gotitnoise).Click();
+        }
+
+        By pressresound = By.XPath("//android.widget.ImageView[@content-desc=\"bottom_menu_icon_person\"]");
+        public void myresoundpress()
+        {
+            driver.FindElement(pressresound).Click();
+        }
+
+        By musicguide = By.XPath("//android.widget.TextView[@content-desc=\"NudgingFunctionalTip1Week3Header\"]");
+        public void guidingmusic()
+        {
+            driver.FindElement(musicguide).Click();
+        }
+
+        By gotitmusic = By.XPath("//android.widget.TextView[@content-desc=\"NudgingTipConfirmButton\"]");
+        public bool MusicGotIt()
+        {
+            try
+            {
+                 return driver.FindElement(gotitmusic).Enabled;
+            }
+            catch(NoSuchElementException)
+            {
+                return false;
+            }
+        }
+
+        By backitmusic = By.XPath("//android.widget.TextView[@content-desc=\"NudgingTipBackToArchiveButton\"]");
+        public bool backittipsmusic()
+        {
+            try
+            {
+                return driver.FindElement(backitmusic).Enabled;
+                
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+
+        }
+
+        public Step10 pressgotit()
+        {
+            driver.FindElement(gotitmusic).Click();
+            return new Step10(driver);
+        }
     }
 }

@@ -26,6 +26,8 @@ namespace Smart3D.StepDefinitions
         Step7 step7;
         Step8 step8;
         Step9 step9;
+        Step10 step10;
+        Step11 step11;
 
        
         public Smart3DStepDefinitions(AndroidDriver<AndroidElement> driver)
@@ -578,6 +580,263 @@ namespace Smart3D.StepDefinitions
             Assert.AreEqual(expectedTitle, actualTitle, "validate title is not Guiding tips on Guiding tips page");
         }
 
+        [When(@"I press Noise filter on Guiding tips")]
+        public void WhenIPressNoiseFilterOnGuidingTips()
+        {
+            step9 = new Step9(driver);
+            step9.noisefilterguid();
+        }
+
+        [When(@"I press Got it on Noise filter nudging dialog")]
+        public void WhenIPressGotItOnNoiseFilterNudgingDialog()
+        {
+            step9 = new Step9(driver);
+            step9.noisegoit();
+        }
+
+        [When(@"I press My Resound on bottom ribbon bar and back to Guiding tips on My Resound")]
+        public void WhenIPressMyResoundOnBottomRibbonBarAndBackToGuidingTipsOnMyResound()
+        {
+            step9 = new Step9(driver);
+            step9.myresoundpress();
+        }
+
+        [When(@"I press Music program on Guiding tips")]
+        public void WhenIPressMusicProgramOnGuidingTips()
+        {
+            step9 = new Step9(driver);
+            step9.guidingmusic();
+        }
+
+        [Then(@"validate Got it button enabled on Music program nudging dialog")]
+        public void ThenValidateGotItButtonEnabledOnMusicProgramNudgingDialog()
+        {
+            step9 = new Step9(driver);
+            bool isButtonEnabled = step9.MusicGotIt();
+            Assert.IsTrue(isButtonEnabled, "The got ot button should be enabled, but it is not");
+           
+        }
+
+        [Then(@"validate Back to tips button enabled on Music program nudging dialog")]
+        public void ThenValidateBackToTipsButtonEnabledOnMusicProgramNudgingDialog()
+        {
+            step9 = new Step9(driver);
+            bool isButtonEnabled = step9.backittipsmusic();
+            Assert.IsTrue(isButtonEnabled, "The got ot button should be enabled, but it is not");
+        }
+
+        [When(@"I press Got it on Music program nudging dialog")]
+        public void WhenIPressGotItOnMusicProgramNudgingDialog()
+        {
+            step9 = new Step9(driver);
+            step9.pressgotit();
+        }
+
+        [When(@"I press menu item More on bottom ribbon bar")]
+        public void WhenIPressMenuItemMoreOnBottomRibbonBar()
+        {
+            step10 = new Step10(driver);
+            step10.moreribbon();
+        }
+
+        [Then(@"validate Auto-activate favorite locations switch is on")]
+        public void ThenValidateAuto_ActivateFavoriteLocationsSwitchIsOn()
+        {
+            step10 = new Step10(driver);
+            bool isClicked = step10.activefavorite();
+            Assert.IsTrue(isClicked, "The autoactive switch is not selected");
+        }
+
+        [When(@"I press Auto-activate favorite locations switch on More menu")]
+        public void WhenIPressAuto_ActivateFavoriteLocationsSwitchOnMoreMenu()
+        {
+            step10 = new Step10(driver);
+            step10.switchon();
+        }
+
+        [Then(@"validate Auto-activate favorite locations switch is off")]
+        public void ThenValidateAuto_ActivateFavoriteLocationsSwitchIsOff()
+        {
+            step10 = new Step10(driver);
+            bool isClicked = step10.activefavorite1();
+            Assert.IsTrue(isClicked, "The autoactive switch is not selected");
+        }
+
+        [When(@"I press Auto-activate favorite locations switch on Moremenu")]
+        public void WhenIPressAuto_ActivateFavoriteLocationsSwitchOnMoremenu()
+        {
+            step10 = new Step10(driver);
+            step10.switchon();
+        }
+
+        [Then(@"validate Autoactivate favorite locations switch is on")]
+        public void ThenValidateAutoactivateFavoriteLocationsSwitchIsOn()
+        {
+            step10 = new Step10(driver);
+            bool isClicked = step10.activefavorite();
+            Assert.IsTrue(isClicked, "The autoactive switch is not selected");
+        }
+
+        [When(@"I press more menu item About")]
+        public void WhenIPressMoreMenuItemAbout()
+        {
+            step10 = new Step10(driver);
+            step10.generalabout();
+        }
+
+        [Then(@"validate page title is displayed on About page")]
+        public void ThenValidatePageTitleIsDisplayedOnAboutPage()
+        {
+            step10 = new Step10(driver);
+            string expectedTitle = "About";
+            string actualTitle = step10.titleonabout();
+            Assert.AreEqual(expectedTitle, actualTitle, "validate title is not about page");
+        }
+
+        [Then(@"validate html view is displayed on About page")]
+        public void ThenValidateHtmlViewIsDisplayedOnAboutPage()
+        {
+            step10 = new Step10(driver);
+            bool isButtonDisplayed = step10.viewtext();
+            Assert.IsTrue(isButtonDisplayed, "The validate html view is not displayed on About page");
+        }
+
+        [When(@"I press back from About page")]
+        public void WhenIPressBackFromAboutPage()
+        {
+            step10 = new Step10(driver);
+            step10.backbutton();
+        }
+
+        [When(@"I press more menu item Legal information")]
+        public void WhenIPressMoreMenuItemLegalInformation()
+        {
+            step10 = new Step10(driver);
+            step10.morelegalinfo();
+
+        }
+
+        [When(@"I press Legal information item MANUFACTURER")]
+        public void WhenIPressLegalInformationItemMANUFACTURER()
+        {
+            step10 = new Step10(driver);
+            step10.moremanufacture();
+        }
+
+        [Then(@"validate page title is displayed on Manufacturer page")]
+        public void ThenValidatePageTitleIsDisplayedOnManufacturerPage()
+        {
+            step10 = new Step10(driver);
+            string expectedTitle = "Manufacturer";
+            string actualTitle = step10.manufacturetitle();
+            Assert.AreEqual(expectedTitle, actualTitle, "validate title is not manufacture page");
+        }
+
+        [When(@"I press back from Manufacturer page")]
+        public void WhenIPressBackFromManufacturerPage()
+        {
+            step10 = new Step10(driver);
+            step10.manufactureback();
+        }
+
+        [When(@"I press Legal information item TERMS AND CONDITIONS")]
+        public void WhenIPressLegalInformationItemTERMSANDCONDITIONS()
+        {
+            step10 = new Step10(driver);
+            step10.moretermspage();
+        }
+
+        [Then(@"validate page title is displayed on Terms and Conditions page")]
+        public void ThenValidatePageTitleIsDisplayedOnTermsAndConditionsPage()
+        {
+            step10 = new Step10(driver);
+            string expectedTitle = "Terms and Conditions";
+            string actualTitle = step10.termstitlepage();
+            Assert.AreEqual(expectedTitle, actualTitle, "validate title is not terms and condition page");
+        }
+
+        [When(@"I press back from Terms and Conditions page")]
+        public void WhenIPressBackFromTermsAndConditionsPage()
+        {
+            step10 = new Step10(driver);
+            step10.backtermspage();
+        }
+
+        [When(@"I press Legal information item PRIVACY POLICY")]
+        public void WhenIPressLegalInformationItemPRIVACYPOLICY()
+        {
+            step10 = new Step10(driver);
+            step10.pageprivacy();
+        }
+
+        [Then(@"validate html view is displayed on PRIVACY POLICY page")]
+        public void ThenValidateHtmlViewIsDisplayedOnPRIVACYPOLICYPage()
+        {
+            step10 = new Step10(driver);
+            bool isButtonDisplayed = step10.htmlprivacypage();
+            Assert.IsTrue(isButtonDisplayed, "The validate html view is not displayed on privacy page");
+        }
+
+        [Then(@"validate page title is displayed on PRIVACY POLICY page")]
+        public void ThenValidatePageTitleIsDisplayedOnPRIVACYPOLICYPage()
+        {
+            step10 = new Step10(driver);
+            string expectedTitle = "PRIVACY POLICY";
+            string actualTitle = step10.pageprivacytitle();
+            Assert.AreEqual(expectedTitle, actualTitle, "validate title is not privacy page");
+        }
+
+        [When(@"I press back from PRIVACY POLICY page")]
+        public void WhenIPressBackFromPRIVACYPOLICYPage()
+        {
+            step10 = new Step10(driver);
+            step10.clickbackprivacy();
+        }
+
+        [When(@"I press back from Legal information page")]
+        public void WhenIPressBackFromLegalInformationPage()
+        {
+            step10 = new Step10(driver);
+            step10.pressbacklegal();
+        }
+
+        [When(@"I press more menu item Support")]
+        public void WhenIPressMoreMenuItemSupport()
+        {
+            step11 = new Step11(driver);
+            step11.moresupport();
+        }
+
+        [Then(@"validate html view is displayed on Support page")]
+        public void ThenValidateHtmlViewIsDisplayedOnSupportPage()
+        {
+            step11 = new Step11(driver);
+            bool isButtonDisplayed = step11.supporthtmlpage();
+            Assert.IsTrue(isButtonDisplayed, "The validate html view is not displayed on support page");
+        }
+
+        [Then(@"validate page title is displayed on Support page")]
+        public void ThenValidatePageTitleIsDisplayedOnSupportPage()
+        {
+            step11 = new Step11(driver);
+            string expectedTitle = "Support";
+            string actualTitle = step11.titlepagesupport();
+            Assert.AreEqual(expectedTitle, actualTitle, "validate title is not support page");
+        }
+
+        [When(@"I press back from Support page")]
+        public void WhenIPressBackFromSupportPage()
+        {
+            step11 = new Step11(driver);
+            step11.pressbacksupportpage();
+        }
+
+        [Then(@"I press menu item Home on bottom ribbon bar")]
+        public void ThenIPressMenuItemHomeOnBottomRibbonBar()
+        {
+            step11 = new Step11(driver);
+            step11.homebackpage();
+        }
 
     }
 }

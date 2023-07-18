@@ -62,7 +62,7 @@ namespace Smart3D.Hooks
            
             appiumOptions.AddAdditionalCapability("platformName", "Android");
             appiumOptions.AddAdditionalCapability("platformVersion", "13");
-            appiumOptions.AddAdditionalCapability("deviceName", "R58N227P0YX");
+            appiumOptions.AddAdditionalCapability("deviceName", "R3CT302GE0F");
             appiumOptions.AddAdditionalCapability("automationName", "UiAutomator2");
             appiumOptions.AddAdditionalCapability("appium:appiumServerAddress", "http://127.0.0.1:4723/wd/hub");
             appiumOptions.AddAdditionalCapability("appPackage", "dk.resound.smart3d");

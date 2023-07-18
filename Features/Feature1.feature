@@ -57,18 +57,51 @@ Automating the Smart-3D app.
    #When I press Music program on Program overview
    #When I press All-Around program on Program overview
   # When I press the Close button on Program overview
-   When I press menu item My ReSound on bottom ribbon bar
-   And I press Learn about the app on My ReSound	
-   And I press Volume control on Learn about the app
-   And I swipe left to 2 / 3 page on Learn about the app
-   Then validate Left and right volume animation is shown on Volume control
-   When I swipe mute left to 3 / 3 page on Learn about the app
-   Then validate Mute animation is shown on Volume control
-  When I close on Learn about the app and back to My Resound page
-  And I press Guiding tips on My ReSound
-  And I press OK on Please notice dialog
- Then validate title is Guiding tips on Guiding tips page
-  
+   #When I press menu item My ReSound on bottom ribbon bar
+  # And I press Learn about the app on My ReSound	
+   #And I press Volume control on Learn about the app
+  # And I swipe left to 2 / 3 page on Learn about the app
+   #Then validate Left and right volume animation is shown on Volume control
+   #When I swipe mute left to 3 / 3 page on Learn about the app
+  # Then validate Mute animation is shown on Volume control
+ # When I close on Learn about the app and back to My Resound page
+  #And I press Guiding tips on My ReSound
+  #And I press OK on Please notice dialog
+ #Then validate title is Guiding tips on Guiding tips page
+ # When I press Noise filter on Guiding tips
+ #And I press Got it on Noise filter nudging dialog
+ #And I press My Resound on bottom ribbon bar and back to Guiding tips on My Resound
+ #And I press Music program on Guiding tips
+ #Then validate Got it button enabled on Music program nudging dialog
+ #Then validate Back to tips button enabled on Music program nudging dialog
+ #When I press Got it on Music program nudging dialog
+ And I press menu item More on bottom ribbon bar
+ Then validate Auto-activate favorite locations switch is on
+ When I press Auto-activate favorite locations switch on More menu
+ Then validate Auto-activate favorite locations switch is off
+ When I press Auto-activate favorite locations switch on Moremenu
+ Then validate Autoactivate favorite locations switch is on
+ When I press more menu item About
+ Then validate page title is displayed on About page
+ And validate html view is displayed on About page
+ When I press back from About page
+ And I press more menu item Legal information
+ And I press Legal information item MANUFACTURER
+ Then validate page title is displayed on Manufacturer page
+ When I press back from Manufacturer page
+ And I press Legal information item TERMS AND CONDITIONS
+ Then validate page title is displayed on Terms and Conditions page
+ When I press back from Terms and Conditions page
+ And I press Legal information item PRIVACY POLICY
+ Then validate html view is displayed on PRIVACY POLICY page
+ And validate page title is displayed on PRIVACY POLICY page
+ When I press back from PRIVACY POLICY page
+ And I press back from Legal information page
+ And I press more menu item Support
+ Then validate html view is displayed on Support page
+ And validate page title is displayed on Support page
+ When I press back from Support page
+ Then I press menu item Home on bottom ribbon bar
 
 
 	
