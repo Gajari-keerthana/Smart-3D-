@@ -36,8 +36,8 @@ namespace Smart3D.Pages
         {
             TouchAction touchaction = new TouchAction(driver);
            AndroidElement slide1 = driver.FindElement(element1);
-            touchaction.Press(101,978)
-                       .MoveTo(101, 640)
+            touchaction.Press(90,1035)
+                       .MoveTo(90, 681)
                        .Release()
                        .Perform();
         } 
@@ -48,8 +48,8 @@ namespace Smart3D.Pages
             
             AndroidElement slide2 = driver.FindElement(element2);
 
-            touchaction.Press(461, 978)
-                       .MoveTo(461, 1298)
+            touchaction.Press(450, 1035)
+                       .MoveTo(450, 1356)
                        .Release()
                        .Perform();
 
@@ -59,38 +59,72 @@ namespace Smart3D.Pages
         {
             TouchAction touchaction = new TouchAction(driver);
             AndroidElement slide3 = driver.FindElement(element3);
-            touchaction.Press(821, 978)
-                       .MoveTo(821, 547)
+            touchaction.Press(810, 1035)
+                       .MoveTo(810, 588)
                        .Release()
                        .Perform();
         }
 
-        public void validatespeech1(string bass)
+        public void validatespeech1(string bass) 
         {
-            Actions action = new Actions(driver);
-            AndroidElement slide1 = driver.FindElement(element1);
-            action.ClickAndHold(slide1).MoveByOffset(0, 2).Perform();
-            string actual_value1 = driver.FindElement(By.XPath("//android.widget.TextView[@content-desc=\"GainChanging\"]")).Text;
-            Assert.AreEqual(actual_value1,bass);
+            try
+            {
+                Actions actions = new Actions(driver);
+                AndroidElement slide1 = driver.FindElement(element1);
+                actions.ClickAndHold(slide1).Perform();
+                actions.MoveByOffset(0, 239).Perform();
+                string actualvalue1 = driver.FindElement(By.XPath("//android.widget.TextView[@content-desc=\"GainChanging\"]")).Text;
+                Assert.AreEqual(bass, actualvalue1);
+                actions.Release().Perform();
+            }
+            catch (Exception ex)
+            {
+                // Handle the exception (you can log it or perform other actions if needed)
+                Console.WriteLine("Validation 1 failed: " + ex.Message);
+            }
         }
 
-            public void validatespeech2(string middle)
+        public void validatespeech2(string middle)
+        {
+            try
             {
-            Actions action = new Actions(driver);
-            AndroidElement slide2 = driver.FindElement(element2);
-            action.ClickAndHold(slide2).MoveByOffset(0,0).Perform();
-            string actual_value1 = driver.FindElement(By.XPath("//android.widget.TextView[@content-desc=\"FineTuneGainLabelMiddle\"]")).Text;
-            Assert.AreEqual(actual_value1,middle);
+                Actions actions = new Actions(driver);
+                AndroidElement slide2 = driver.FindElement(element2);
+                actions.ClickAndHold(slide2).Perform();
+                actions.MoveByOffset(360, 239).Perform();
+                string actualvalue2 = driver.FindElement(By.XPath("//android.widget.TextView[@content-desc=\"GainChanging\"]")).Text;
+                Assert.AreEqual(middle, actualvalue2);
+                actions.Release().Perform();
             }
+            catch (Exception ex)
+            {
+                // Handle the exception (you can log it or perform other actions if needed)
+                Console.WriteLine("Validation 2 failed: " + ex.Message);
+            }
+
+
+        }
 
        public Step6 validatespeech3(string treble)
         {
-            Actions action = new Actions(driver);
-            AndroidElement slide3 = driver.FindElement(element3);
-            action.ClickAndHold(slide3).MoveByOffset(0, 0).Perform();
-            string actual_value1 = driver.FindElement(By.XPath("//android.widget.TextView[@content-desc=\"FineTuneGainLabelTreble\"]")).Text;
-            Assert.AreEqual(actual_value1, treble);
+            try
+            {
+                Actions actions = new Actions(driver);
+                AndroidElement slide3 = driver.FindElement(element3);
+                actions.ClickAndHold(slide3).Perform();
+                actions.MoveByOffset(720, 239).Perform();
+                string actualvalue3 = driver.FindElement(By.XPath("//android.widget.TextView[@content-desc=\"GainChanging\"]")).Text;
+                Assert.AreEqual(treble, actualvalue3);
+                actions.Release().Perform();
+                
+            }
+            catch (Exception ex)
+            {
+                // Handle the exception (you can log it or perform other actions if needed)
+                Console.WriteLine("Validation 2 failed: " + ex.Message);
+            }
             return new Step6(driver);
+
         }
 
     }

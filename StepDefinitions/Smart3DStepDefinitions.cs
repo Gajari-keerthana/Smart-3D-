@@ -30,7 +30,7 @@ namespace Smart3D.StepDefinitions
         Step11 step11;
 
        
-        public Smart3DStepDefinitions(AndroidDriver<AndroidElement> driver)
+        public Smart3DStepDefinitions(AndroidDriver<AndroidElement> driver) //define the constructor which will define the driver object
         {
             this.driver = driver;
         }
@@ -225,9 +225,11 @@ namespace Smart3D.StepDefinitions
         public void WhenSetBassGainToMiddleGainToTrebleGainTo(string p0, string p1, string p2)
         {
             step5 = new Step5(driver);
-            step5.value1(p0);
-            step5.value2(p1);
-            step5.value3(p2);
+           
+                step5.value1(p0);
+                step5.value2(p1);
+                step5.value3(p2);
+            
         }
 
 
@@ -235,9 +237,9 @@ namespace Smart3D.StepDefinitions
         public void WhenThenValidateBassGainToMiddleGainToTrebleGainTo(string p0, string p1, string p2)
         {
             step5 = new Step5(driver);
-            step5.validatespeech1(p0);
-            step5.validatespeech2(p1);
-            step5.validatespeech3(p2);
+                step5.validatespeech1(p0);
+                step5.validatespeech2(p1);
+                step5.validatespeech3(p2);
         }
 
 
