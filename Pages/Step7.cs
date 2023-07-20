@@ -24,6 +24,7 @@ namespace Smart3D.Pages
         By outdoor = By.XPath("(//android.view.View[@index='0'])[2]");
         By outdoortitle = By.Id("dk.resound.smart3d:id/card_title");
 
+        //swipe left to Outdoor program from current program
         public void outdoornoise()
         {
 
@@ -35,19 +36,22 @@ namespace Smart3D.Pages
             TouchAction swipeAction = new TouchAction(driver);
             swipeAction.Press(screenWidth, y).Wait(500).MoveTo(endX, y).Release().Perform();
         }
+
+        //validate program card is Outdoor
         public String ValidateText()
         {
             return driver.FindElement(outdoortitle).Text;
 
         }
 
+        //press Sound Enhancer button on Outdoor program
         By outdoorsound = By.XPath("//android.widget.TextView[@content-desc=\"HomeButtonLabelFineTune\"]");
-
         public void outdoorsoundnoise()
         {
             driver.FindElement(outdoorsound).Click();
         }
 
+        //drag Wind Noise Reduction to 'Strong' on Outdoor Sound Enhancer
         By windnoise = By.XPath("(//android.view.View[@index='0'])[5]");
         //By Strongtitle = By.XPath("(//android.widget.LinearLayout[@index='1'])[4]");
 
@@ -60,6 +64,8 @@ namespace Smart3D.Pages
                        .Release()
                        .Perform();
         }
+
+        //validate HI PNR value is 'Strong'
         public void StrongValidateText(string expectedvalue)
         {
             // return driver.FindElement(Strongtitle).Text;
@@ -74,6 +80,7 @@ namespace Smart3D.Pages
             actions.Release().Perform();
         }
 
+        // press the exit button on Outdoor Sound Enhancer
         By exit = By.XPath("//android.widget.ImageView[@content-desc=\"icon_close_m\"]");
         
         public Step8 soundexit()

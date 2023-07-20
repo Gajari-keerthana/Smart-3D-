@@ -16,10 +16,10 @@ namespace Smart3D.Pages
             this.driver = driver;
         }
 
-        By poptext = By.XPath("//android.widget.TextView[@content-desc=\"ConsentPopupButtonOK\"]");
+        By poptext = By.XPath("//android.widget.TextView[@content-desc=\"ConsentPopupButtonOK\"]"); 
         By poptext1 = By.XPath("//android.widget.TextView[@content-desc=\"ConsentPopupButtonNoThanks\"]");
 
-        public Programpage clickonpopup()
+        public Programpage clickonpopup()  //this method handles the popup buttons
         {
             driver.FindElement(poptext).Click();
             driver.FindElement(poptext1).Click();

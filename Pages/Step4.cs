@@ -20,6 +20,8 @@ namespace Smart3D.Pages
         //By text = By.Id("SmartButtonAllAroundSpeechClarity");
         By noise = By.XPath("//android.widget.TextView[@content-desc=\"SmartButtonAllAroundNoiseFilter\"]");
 
+
+        //press speech clarity button on All Around program and validate speech clarity button is enabled
         public void press()
         {
             driver.FindElement(speech).Click();
@@ -32,10 +34,13 @@ namespace Smart3D.Pages
             //return driver.FindElement(speech).Text.Replace("\n", " ");
         }
 
+        //press on Noise filter button on All Around program
         public void press1()
         {
             driver.FindElement(noise).Click();
         }
+
+        //validate Noise filter button is enabled and speech clarity button is disabled.
         public void ValidateText1()
         {
 
@@ -52,6 +57,8 @@ namespace Smart3D.Pages
            // Assert.IsTrue(isSpeechElementDisabled, "'Speech clarity' button is not disabled.");
         }
 
+
+        //validate speech clarity button is enabled and Noise filter button is disabled.
         public Step5 validateText2()
         {
             IWebElement speechElement = driver.FindElement(speech);

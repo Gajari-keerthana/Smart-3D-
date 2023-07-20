@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Appium.MultiTouch;
 using OpenQA.Selenium.Interactions;
+using SharpCompress.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,22 +26,24 @@ namespace Smart3D.Pages
         By seekbar4 = By.Id("dk.resound.smart3d:id/volume_thumb_innercircle");
         By seekbar13 = By.Id("dk.resound.smart3d:id/volume_thumb_innercircle");
 
-
+       // it merge surroundings volume on All-Around program
         public void clickonmerge()
         {
             driver.FindElement(merge).Click();
             
         }
 
-       /* public void clickonmerge2()
-        {
-            driver.FindElement(merge1).Click();
-            Actions actions = new Actions(driver);
-            TouchActions actions1 = new TouchActions(driver);
-            AndroidElement display2 = driver.FindElement(merge1);
-            actions.ClickAndHold(display2).Perform();
-        } */
+        /* public void clickonmerge2()
+         {
+             driver.FindElement(merge1).Click();
+             Actions actions = new Actions(driver);
+             TouchActions actions1 = new TouchActions(driver);
+             AndroidElement display2 = driver.FindElement(merge1);
+             actions.ClickAndHold(display2).Perform();
+         } */
 
+
+        //validating merged surroundings volume is "3" on All-Around program
         public void validate4(string value)
         {
             
@@ -54,7 +57,9 @@ namespace Smart3D.Pages
             //Assert.IsNotNull(merge, "The merge button click action did not lead to the expected behavior.");
         }
 
-        public Step4 validate10(string value)
+
+        //validate HI merged surrounding volume is "13" on All-Around program
+        public Step4 validate5(string value)
         {
             Actions actions = new Actions(driver);
             AndroidElement display = driver.FindElement(seekbar13);

@@ -27,11 +27,14 @@ namespace Smart3D.Pages
         
         By element3 = By.XPath("//android.widget.TextView[@content-desc=\"FineTuneGainLabelTreble\"]");
 
+
+        //press on Sound Enhancer button on All Around program
         public void sound()
         {
             driver.FindElement(soundEnhancer).Click();
         }
 
+        //set Bass gain to '4' Middle gain to '-3' Treble gain to '5'
         public void value1(string value)
         {
             TouchAction touchaction = new TouchAction(driver);
@@ -65,6 +68,7 @@ namespace Smart3D.Pages
                        .Perform();
         }
 
+        //Then validate Bass gain to '4' Middle gain to '-3' Treble gain to '5'
         public void validatespeech1(string bass) 
         {
             try

@@ -24,17 +24,18 @@ namespace Smart3D.Pages
         By seekbar1 = By.Id("dk.resound.smart3d:id/seekBar_top");
         By seekbar2 = By.Id("dk.resound.smart3d:id/seekBar_bottom");
 
-        public string GetTitle()
+        public string GetTitle() //this defines the HI in All Around program
         {
             return driver.FindElement(displaytext).Text;
         }
 
-        public void clickonsplit()
+        public void clickonsplit() // this split the right and left volume bars
         {
             driver.FindElement(split).Click();
         }
 
-        public void slider1(string value)
+        // the below method defines the adjusting the volume bars
+        public void slider1(string value) 
         {
             Actions actions = new Actions(driver);
             TouchAction action = new TouchAction(driver);

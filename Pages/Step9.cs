@@ -18,12 +18,15 @@ namespace Smart3D.Pages
         {
             this.driver = driver;
         }
+
+        //press menu item My ReSound on bottom ribbon bar
         By Myresound = By.XPath("//android.widget.ImageView[@content-desc=\"bottom_menu_icon_person\"]");
         public void resound()
         {
             driver.FindElement(Myresound).Click();
         }
 
+        //
         By learn = By.XPath("//android.widget.TextView[@content-desc=\"MyResoundLearningMenuTitleApp\"]");
         public void learnaboutapp()
         {

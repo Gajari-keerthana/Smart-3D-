@@ -14,7 +14,7 @@ namespace Smart3D.StepDefinitions
     [Binding]   
     public sealed class Smart3DStepDefinitions
     {
-         private AndroidDriver<AndroidElement> driver;
+         private AndroidDriver<AndroidElement> driver;  //Android element represents UI(e.g.,buttons,text,fields) in the Android app.
         Welcomepage welcomepage;
         PopupPage popupPage;
         Programpage programpage;
@@ -164,7 +164,7 @@ namespace Smart3D.StepDefinitions
         public void WhenValidateHIMergedSurroundingVolumeIsOnAll_AroundProgram(string p0)
         {
             step3 = new Step3(driver);
-            step3.validate10(p0);
+            step3.validate5(p0);
         }
 
         [When(@"press speech clarity button on All Around program and validate speech clarity button is enabled")]

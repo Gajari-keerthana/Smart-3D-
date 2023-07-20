@@ -25,19 +25,21 @@ namespace Smart3D.Pages
         By Breaking = By.XPath("//android.widget.Button[@content-desc=\"TsgNatureSoundsBreakingWaves\"]");
         By Sound = By.XPath("//android.widget.TextView[@content-desc=\"FineTuneSwitchButtonTitleFinetune\"]");
         By exit = By.XPath("//android.widget.ImageView[@content-desc=\"icon_close_m\"]");
-       
-      
 
+
+        // press on Tinnitus Manager on All Around  Sound Enhancer
         public void tinnitusmanager()
         {
             driver.FindElement(Tinnitus).Click();
         }
 
+        //press Nature sound button Calming Waves on All Around Tinnitus manager
         public void calmingwaves()
         {
             driver.FindElement(calming).Click();
         }
 
+        //press Nature sound button Breaking Waves on All Around Tinnitus manager
         public void breakingwaves()
         {
             driver.FindElement(Breaking).Click();
@@ -47,6 +49,8 @@ namespace Smart3D.Pages
         {
             driver.FindElement(Sound).Click();
         }
+
+        //press the exit button on All Around Sound enhancer
         public void exitbutton()
         {
             driver.FindElement(exit).Click();
@@ -54,6 +58,8 @@ namespace Smart3D.Pages
 
         By swipe = By.XPath("(//android.view.ViewGroup[@index='0'])[2]");
         By text = By.Id("dk.resound.smart3d:id/card_title");
+
+        //swipe left to Hear in Noise program from current program
         public void hearinnoise()
         {
 
@@ -67,12 +73,14 @@ namespace Smart3D.Pages
             
         }
 
+        //validate program card is Hear in Noise
         public String ValidateText()
         {
             return driver.FindElement(text).Text;
            
         }
 
+        //press Sound Enhancer button on Hear in noise program
         By hearsound = By.XPath("//android.widget.TextView[@content-desc=\"HomeButtonLabelFineTune\"]");
 
         public void hearsoundnoise()
@@ -80,6 +88,7 @@ namespace Smart3D.Pages
             driver.FindElement(hearsound).Click();
         }
 
+        //press Tinnitus Manager on Hear in noise Sound Enhancer
         By hearTinnitus = By.XPath("//android.widget.TextView[@content-desc=\"FineTuneSwitchButtonTitleTinnitusManager\"]");
 
         public void heartinnitussound()
@@ -87,6 +96,7 @@ namespace Smart3D.Pages
             driver.FindElement(hearTinnitus).Click();
         }
 
+        //press white noise button Slight variation on Hear in noise Tinnitus Manager
         By slightvariation = By.XPath("//android.widget.Button[@content-desc=\"TsgWhiteNoiseVariationsSlight\"]");
 
         public void slightvar()
@@ -94,16 +104,17 @@ namespace Smart3D.Pages
             driver.FindElement(slightvariation).Click();
         }
 
+
         By reset = By.XPath("//android.widget.TextView[@content-desc=\"FineTuneButtonReset\"]");
         By sound1 = By.XPath("//android.widget.TextView[@content-desc=\"FineTuneSwitchButtonTitleFinetune\"]");
         By exit1 = By.XPath("//android.widget.ImageView[@content-desc=\"icon_close_m\"]");
 
-        public void resetbutton()
+        public void resetbutton() //press Reset button on All-Around Tinnitus Manager
         {
             driver.FindElement(reset).Click();
         }
 
-        public Step7 soundenh()
+        public Step7 soundenh() //press the exit button on Hear in noise Sound Enhancer
         {
             driver.FindElement(sound1).Click();
             driver.FindElement(exit1).Click();

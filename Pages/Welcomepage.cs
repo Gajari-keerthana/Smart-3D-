@@ -15,7 +15,7 @@ namespace Smart3D.Pages
         {
             this.driver = driver;
         }
-        By nametext = By.Id("dk.resound.smart3d:id/demo_button");
+        By nametext = By.Id("dk.resound.smart3d:id/demo_button");  //it clicks on the take me to demo app
 
         public  PopupPage displaytext(string text)
         {

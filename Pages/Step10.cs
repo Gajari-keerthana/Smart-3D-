@@ -15,6 +15,7 @@ namespace Smart3D.Pages
         {
             this.driver = driver;
         }
+
         By more = By.XPath("//android.widget.ImageView[@content-desc=\"bottom_menu_icon_menu\"]");
         public void moreribbon()
         {

@@ -20,7 +20,7 @@ namespace Smart3D.Pages
         By music = By.XPath("(//android.view.View[@index='0'])[2]");
         By musictitle = By.Id("dk.resound.smart3d:id/card_title");
 
-
+        //swipe left to Music program from current program
         public void musicslide()
         {
 
@@ -33,11 +33,13 @@ namespace Smart3D.Pages
             swipeAction.Press(screenWidth, y).Wait(500).MoveTo(endX, y).Release().Perform();
         }
 
+        //validate program card is Music
         public String ValidateText()
         {
             return driver.FindElement(musictitle).Text;
         }
 
+        //press Music program on the top ribbon bar
         By ribbon = By.XPath("//android.widget.ImageView[@content-desc=\"prg_music_m\"]");
         
 
@@ -46,6 +48,7 @@ namespace Smart3D.Pages
             driver.FindElement(ribbon).Click();
         }
 
+        //validate program card is Musicribbon
         public String ValidateText1()
         {
             return driver.FindElement(musictitle).Text;
@@ -53,11 +56,14 @@ namespace Smart3D.Pages
 
         By topoutdoor = By.XPath("//android.widget.ImageView[@content-desc=\"prg_outdoor_m\"]");
         By outdoortitle = By.Id("dk.resound.smart3d:id/card_title");
+
+        //press Outdoor program on the top ribbon bar
         public void topribbon1()
         {
             driver.FindElement(topoutdoor).Click();
         }
 
+        // validate program card is Outdoorribbon
         public string validateText2()
         {
             return driver.FindElement(outdoortitle).Text;
@@ -65,11 +71,14 @@ namespace Smart3D.Pages
 
         By tophear = By.XPath("//android.widget.ImageView[@content-desc=\"prg_hearinnoise_m\"]");
         By textnoise = By.Id("dk.resound.smart3d:id/card_title");
+
+        //press Hear in noise program on the top ribbon bar
         public void topribbon2()
         {
             driver.FindElement(tophear).Click();
         }
 
+        //validate program card is Hear in Noiseribbon
         public String validateText3()
         {
             return driver.FindElement(textnoise).Text;
@@ -78,16 +87,19 @@ namespace Smart3D.Pages
         By topAllaround = By.XPath("//android.widget.ImageView[@content-desc=\"prg_allaround_m\"]");
         By textallaround = By.Id("dk.resound.smart3d:id/card_title");
 
+        //press All-Around program on the top ribbon bar
         public void topribbon3()
         {
             driver.FindElement(topAllaround).Click();
         }
 
+        //validate program card is All-Around
         public string validateText4()
         {
             return driver.FindElement(textallaround).Text;
         }
 
+        //press Program overview button on topribbonbar
         By programoverview = By.XPath("//android.widget.ImageView[@content-desc=\"ProgramOverviewDragButton\"]");
 
         public void programdrag()
@@ -95,30 +107,35 @@ namespace Smart3D.Pages
             driver.FindElement(programoverview).Click();
         }
 
+        //press Hear in noise program on Program overview
         By hearoverview = By.XPath("//android.widget.ImageView[@content-desc=\"prg_hearinnoise_m\"]");
         public void programhear()
         {
             driver.FindElement(hearoverview).Click();
         }
 
+        //press Outdoor program on Program overview
         By outdoorreview = By.XPath("//android.widget.ImageView[@content-desc=\"prg_outdoor_m\"]");
         public void programoutdoor()
         {
             driver.FindElement(outdoorreview).Click();
         }
 
+        //press Music program on Program overview
         By musicreview = By.XPath("//android.widget.ImageView[@content-desc=\"prg_music_m\"]");
         public void programmusic()
         {
             driver.FindElement(musicreview).Click();
         }
 
+        //press All-Around program on Program overview
         By Allaroundreview = By.XPath("//android.widget.ImageView[@content-desc=\"prg_allaround_m\"]");
         public void programAllaround()
         {
             driver.FindElement(Allaroundreview).Click();
         }
 
+        //press the Close button on Program overview
         By close = By.XPath("//android.widget.ImageView[@content-desc=\"icon_close_m\"]");
         public Step9 programclose()
         {
