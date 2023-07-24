@@ -64,7 +64,7 @@ namespace Smart3D.Pages
             Actions actions = new Actions(driver);
             AndroidElement display = driver.FindElement(seekbar13);
             actions.ClickAndHold(display).Perform();
-            actions.MoveByOffset(570, 0).Perform();
+            actions.MoveByOffset(847, 0).Perform();
             string act_value3 = driver.FindElement(By.XPath("//android.widget.TextView[@content-desc=\"VolumeChanging\"]")).Text;
             Assert.AreEqual(act_value3, value);
             actions.Release().Perform();

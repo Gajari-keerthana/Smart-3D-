@@ -31,7 +31,7 @@ namespace Smart3D.Utility
             _extentReports.AttachReporter(htmlReporter);
             _extentReports.AddSystemInfo("Application", "Smart3D");
             _extentReports.AddSystemInfo("platformName", "Android");
-            _extentReports.AddSystemInfo("deviceName", "RZ8NA1HKZ0B");
+            _extentReports.AddSystemInfo("deviceName", "0e760502");
         }
 
         public static void ExtentReportTearDown()

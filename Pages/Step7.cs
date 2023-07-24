@@ -59,8 +59,8 @@ namespace Smart3D.Pages
         {
             TouchAction touchaction = new TouchAction(driver);
             AndroidElement slide1 = driver.FindElement(windnoise);
-            touchaction.Press(831, 1902)
-                       .MoveTo(831, 1902)
+            touchaction.Press(794, 2031)
+                       .MoveTo(794, 2031)
                        .Release()
                        .Perform();
         }
